@@ -1,11 +1,6 @@
 
-interface shapedemo {
-    double area();      
-    double perimeter(); 
-    	
-}
 
-abstract class Shape implements shapedemo {
+abstract class Shape  {
     protected int r1;
     protected int r2;
 
@@ -27,15 +22,7 @@ class Rectangle extends Shape {
     public double perimeter() {
         return 2 * (r1 + r2);         	
     }
-     public double area() {
-       System.out.println("Area");
-        
     }
-    public double perimeter() {
-         System.out.println("perimeter");
-        	
-    }
-}
 
 class Triangle extends Shape {
     private int side3;
@@ -53,15 +40,7 @@ class Triangle extends Shape {
     public double perimeter() {
         return r1 + r2 + side3; 
     }
-         public double area() {
-       System.out.println("Area");
-        
-    }
-    public double perimeter() {
-         System.out.println("perimeter");
-        	
-    }
-}
+      }
 
 class Circle extends Shape {
  
@@ -74,15 +53,7 @@ class Circle extends Shape {
     public double perimeter() {
         return 2 * Math.PI * r1; 
     }
-         public double area() {
-       System.out.println("Area");
-        
-    }
-    public double perimeter() {
-         System.out.println("perimeter");
-        	
-    }
-}
+ }
 
 public class shapeabstract {
     public static void main(String[] args) {

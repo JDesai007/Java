@@ -1,92 +1,45 @@
+package org.gvp.dcs.ds;
 
-import java.util.Scanner;
+public class Stack {
+    private int[] stackArray;
+    private int top;
+    private int capacity;
 
-class stack {
-  int top = -1, s[], max;
-  Scanner s1 = new Scanner(System.in);;
-
-  stack() {
-    max = 5;
-    s = new int[max];
-  }
-
-  stack(int len) {
-    max = len;
-    s = new int[max];
-  }
-
-  void push() {
-    int ele;
-    if (top == max - 1)
-      System.out.println("\nStack is Overflow..");
-    else {
-      top++;
-      System.out.print("Enter New Element : ");
-      ele = s1.nextInt();
-      s[top] = ele;
+    public Stack(int capacity) {
+        this.capacity = capacity;
+        stackArray = new int[capacity];
+        top = -1;
     }
-  }
 
-  void pop() {
-    if (top == -1)
-      System.out.println("\nStack is Underflow..");
-    else {
-      System.out.println("\nRemove Element : " + s[top]);
-      top--;
+    public void push(int value) {
+        if (top == capacity - 1) {
+            System.out.println("Stack Overflow! Cannot push " + value);
+            return;
+        }
+        stackArray[++top] = value;
     }
-  }
 
-  void traverse() {
-    if (top == -1)
-      System.out.println("\nStack is Underflow..!!");
-    else {
-    	
-      System.out.print("Elements : ");
-      for (int i = top; i >= 0; i--)
-        System.out.print(s[i] + " ");
+    public int pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow!");
+            return -1;
+        }
+        return stackArray[top--];
     }
-  }
-}
 
-class st {
-  static Scanner sc=new Scanner(System.in);
-  public static void operation(stack s)
-  {
-      do
-      { 
-         System.out.println("\n1.PUSH");
-         System.out.println("2.POP");
-         System.out.println("3.Traverse");
-         System.out.println("0.Exit");
-         System.out.print("Enter Your Choice : ");
-         int c=sc.nextInt();
-         switch (c) {
-          case 1:
-            s.push();
-            break;
-          case 2:
-            s.pop();
-            break;
-          case 3:
-            s.traverse();
-            break;
-          case 0:
-            System.exit(0);
-          default:System.out.println("\nPlease,enter valid one above choice");
-            break;
-         }
-      }while(true);
-  }
-  public static void main(String args[])
-  {
+    public boolean isEmpty() {
+        return top == -1;
+    }
 
-    boolean t=true;
-    while(t)
-    {
-	  	  stack s1=new stack();
-          operation(s1);
-          t=false;
-    
-  }
-  }
+    public void display() {
+        if (top == -1) {
+            System.out.println("Stack is empty.");
+            return;
+        }
+        System.out.print("Stack elements: ");
+        for (int i = 0; i <= top; i++) {
+            System.out.print(stackArray[i] + " ");
+        }
+        System.out.println();
+    }
 }

@@ -1,18 +1,13 @@
 package org.gvp.dcs.ds;
 
 
-public class packagedemo {
- 
-    
-}
-
-class Stack{
+class packagedemo{
 	private double top;
 	private int []arr;
 	
 	public Stack(){
 		top=-1;
-		arr=int arr[5];
+		arr[]=int arr[5];
 	}
 	public Stack(int size){
 		this();
@@ -52,7 +47,7 @@ class Queue{
 	public Queue(int size){
 		this();
 		this.top=top;
-		arr=int [arr[size];
+		arr=int [arr[size]];
 		this.rear=rear;
 	}
 	public void push()

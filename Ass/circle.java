@@ -30,7 +30,7 @@ public class circle {
 
     public double diameter() {
         return 2 * r;  
-    }
+    } 
 
     public double getX() {
         return x;

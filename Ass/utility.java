@@ -5,7 +5,7 @@ public class utility {
     public static long factorial(long value) {
         if (value < 0) {
             System.out.println("Factorial is not negative numbers.");
-            return -1;
+            return -1;  
         }
         long res = 1;
         for (long i = 2; i <= value; i++) {
